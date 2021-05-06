@@ -1,0 +1,32 @@
+<header class="plan" *ngIf="product.type === 'plan'; else typeCellphone">
+  <img
+    class="plan_image"
+    [src]="product.backgroundImg"
+    alt="background image"
+  />
+
+  <div class="plan_container">
+    <div class="plan_description">
+      <p>
+        {{ product.productDescription }}
+      </p>
+    </div>
+
+    <a class="button" [href]="product.link" target="_blank">Go link</a>
+  </div>
+</header>
+
+<ng-template #typeCellphone>
+  <header class="cellphone">
+    <img
+      class="cellphone_image"
+      [src]="product.productImg"
+      alt="product image"
+    />
+
+    <div class="cellphone_description">
+      <p>{{ product.productName }}</p>
+      <span>{{ product.productDescription }}</span>
+    </div>
+  </header>
+</ng-template>
